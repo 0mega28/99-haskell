@@ -1,0 +1,1 @@
+removeAt n ls = take (n - 1) ls ++ drop n ls
