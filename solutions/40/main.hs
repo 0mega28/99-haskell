@@ -9,5 +9,10 @@ goldbach n = (x, n - x)
         searchArray = takeWhile (<n) primes
         x = head [x | x <- searchArray, (n - x) `elem` searchArray ]
 
+goldbach' n = head [(x, y) | x <- pr, y <- pr, x + y == n]
+    where 
+        pr = takeWhile (<n) primes
 
-main = print $ goldbach 28
+main = do
+    print $ goldbach 28
+    print $ goldbach' 28
